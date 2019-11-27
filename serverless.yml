@@ -1,0 +1,49 @@
+service:
+  name: miaguilatest
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  apiGateway:
+    minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+  stage: ${opt:stage, 'dev'}
+
+functions:
+  getTrips:
+    handler: handler.getTrips
+    events:
+      - http:
+          method: get
+          path: trips
+  
+  getCityTrips:
+    handler: handler.getCityTrips
+    events:
+      - http:
+          method: get
+          path: trips/{city}
+
+  postTrip:
+    handler: handler.postTrip
+    events:
+      - http:
+          method: post
+          path: trips
+
+  putTrip:
+    handler: handler.putTrip
+    events:
+      - http:
+          method: put
+          path: trips
