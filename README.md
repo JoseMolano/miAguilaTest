@@ -18,7 +18,7 @@ A partir del llamado en API Gateway, cuyo trabajo es activar la función lambda 
 ### **Notas:**
 
 - Por lo general uso **GitFlow** como flujo de desarrollo, pero al ser un proyecto pequeño decidí no usarlo y solo subirlo al repositorio al terminar.
-- Documentación: [swagger](https://app.swaggerhub.com/apis/JoseMolano/dev-miaguilatest/20191127T041504Z#/).
+- Documentación: [swagger](https://app.swaggerhub.com/apis/JoseMolano/dev-miaguilatest/20191127T041504Z#/) (https://app.swaggerhub.com/apis/JoseMolano/dev-miaguilatest/20191127T041504Z#/).
 - Endpoints AWS:
 
   - GET - https://3wq13an9g7.execute-api.us-east-1.amazonaws.com/dev/trips
